@@ -1,10 +1,16 @@
-Tidy Tuesday - Car Fuel Economy
-================
-Jamie Hargreaves
+---
+title: "Tidy Tuesday - Car Fuel Economy"
+author: "Jamie Hargreaves"
+output: rmarkdown::github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 
 ### Load the data
 
-``` r
+```{r warning = FALSE, message = FALSE}
 library(tidyverse)
 
 # read data
@@ -13,7 +19,7 @@ big_epa_cars <- readr::read_csv("https://raw.githubusercontent.com/rfordatascien
 
 ### Top 10 manufacturers
 
-``` r
+```{r message = FALSE}
 # get top 10 most common makes
 top_10 <- big_epa_cars %>%
   group_by(make) %>%
@@ -30,7 +36,7 @@ big_epa_cars %<>%
 
 ### What does the distribution of city MPG look like by manufacturer?
 
-``` r
+```{r fig.retina = 2, fig.align = 'center', message = FALSE}
 library(hrbrthemes)
 
 # visualise
@@ -49,5 +55,3 @@ big_epa_cars %>%
   theme_ipsum() + 
   theme(legend.position = "none")
 ```
-
-<img src="README_files/figure-gfm/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" />
