@@ -8,18 +8,12 @@ output: rmarkdown::github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-### Load the data
-
-```{r warning = FALSE, message = FALSE}
+```{r warning = FALSE, message = FALSE, fig.retina = 2, fig.align = 'center'}
 library(tidyverse)
 
 # read data
 big_epa_cars <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-10-15/big_epa_cars.csv")
-```
 
-### Top 10 manufacturers
-
-```{r message = FALSE}
 # get top 10 most common makes
 top_10 <- big_epa_cars %>%
   group_by(make) %>%
@@ -32,11 +26,7 @@ library(magrittr)
 
 big_epa_cars %<>%
   left_join(top_10)
-```
 
-### What does the distribution of city MPG look like by manufacturer?
-
-```{r fig.retina = 2, fig.align = 'center', message = FALSE}
 library(hrbrthemes)
 
 # visualise
