@@ -1,4 +1,4 @@
-Tidy Tuesday - Car Fuel Economy
+Car Fuel Economy
 ================
 Jamie Hargreaves
 
